@@ -54,5 +54,31 @@ $T_{n-1} = 3^{n-1} - 1$, so
     T_n = 3T_{n-1} + 2 = 3(3^{n-1}-1) + 2 = 3^n - 3 + 2 = 3^n - 1
 \end{equation*}
 
+\section*{Exercise 10.}
 
+I will describe the optimal strategies, which give rise to the relations between
+$Q_n$, the number of turns taken to transfer $n$ disks from $A$ to $B$, and 
+$R_n$, the number of turns taken to transfer from the $n$ disks from $B$ back 
+to $A$, which are 
+
+\begin{align*}
+    Q_n & = 2R_{n-1}+1 \\
+    R_n & = Q_n + Q_{n-1} + 1
+\end{align*}
+
+for $n > 0$. To get $Q_n$, we need to transfer the top $n-1$ pegs to from $A$
+to $C$, which takes $R_{n-1}$ moves; then we transfr the last one to $B$, and then 
+we move the top $n-1$ pegs from $C$ to $B$, taken $R_{n-1}$ turns again, i.e., 
+$Q_n = 2R_{n-1} + 1$. 
+
+To get $R_n$, we first move the $n-1$ smallest from $B$ to $A$, which takes $R_{n-1}$ turns,
+then move the biggest peg to $C$, then move the $n-1$ smallest from $A$ to $B$, taking 
+$Q_{n-1}$ turns, then move the biggest peg to $A$, and finally move the smallest 
+$n-1$ pegs from $B$ to $A$, that is,
+
+\begin{equation*}
+    R_n = R_{n-1} + 1 + Q_{n-1} + 1 + R_{n-1} = 2R_{n-1} + 1 + Q_{n-1} + 1 = Q_n + Q_{n-1} + 1
+\end{equation*}
+
+which is what we wanted to show. 
 \end{document}
